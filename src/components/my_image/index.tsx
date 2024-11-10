@@ -3,16 +3,9 @@ import { useEffect, useState, memo } from 'react';
 
 function $MyImage(props: { src: string; alt?: string }) {
   const { src, alt } = props;
-
-  const [picture, setPicture] = useState('');
-  useEffect(() => {
-    const endpoint =
-      'https://api.unsplash.com/photos/random/?client_id=G9TqWHSpfznQX8Dcb25WU5UOUSuFJcN942Fha3YJfEc';
-    fetch(endpoint).then(async (response) => {
-      const data = await response.json();
-      setPicture(data.urls.regular);
-    });
-  }, []);
+  const random = Math.round(Math.random() * 5);
+  const [picture, setPicture] = useState(`/images/random/0${random}.avif`);
+  useEffect(() => {}, []);
 
   return <NextImage src={picture} alt={alt ?? ''} fill />;
 }
