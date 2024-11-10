@@ -4,7 +4,7 @@ import path from 'path';
 import { cwd } from 'process';
 
 // 下载图片并保存
-async function downloadImage(id) {
+async function downloadImage(id: number) {
   try {
     // 搜索图片
     const endpoint =
@@ -14,11 +14,11 @@ async function downloadImage(id) {
 
     // 使用 node-fetch 下载图片数据
     const pictureRes = await fetch(data.urls.regular);
-    const buffer = await pictureRes.buffer();
+    // const buffer = await pictureRes.buffer();
 
-    // 保存图片到本地
-    fs.writeFileSync(path.join(cwd(), `../public/images/random/${id}.png`), buffer);
-    console.log(`图片已保存到 ${fileName}.jpg`);
+    // // 保存图片到本地
+    // fs.writeFileSync(path.join(cwd(), `../public/images/random/${id}.png`), buffer);
+    console.log(`图片已保存到 ${id}.png`);
   } catch (error) {
     console.error('下载图片时出错:', error);
   }
