@@ -29,14 +29,7 @@ function $Home() {
   return (
     <div>
       <ContentSpace>
-        <ViewHeader
-          title="博客"
-          desc={
-            <p>
-              我的博客网站，名曰“言之有物”，出自《周易·家人》：“君子以言有物，而行有恒”。
-            </p>
-          }
-        />
+        <ViewHeader title="言物" desc={<p>《周易·家人》：“君子以言有物，而行有恒”。</p>} />
         <Divider />
         <div className={style['commend-container']}>
           <div className={style['post-detail']}>

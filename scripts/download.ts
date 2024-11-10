@@ -2,7 +2,6 @@
 import fs from 'fs';
 import path from 'path';
 import { cwd } from 'process';
-
 // 下载图片并保存
 async function downloadImage(id: number) {
   try {
@@ -28,8 +27,6 @@ const imagesPromiseList = new Array(30).fill(0).map(async (_, index) => {
   await downloadImage(index + 1);
 });
 
-async function run() {
-  await Promise.allSettled(imagesPromiseList);
-}
+async function run() {}
 
 run();

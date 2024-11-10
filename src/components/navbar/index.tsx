@@ -25,12 +25,8 @@ function $Navbar() {
         <Image src="/images/logo0.svg" alt="logo" width={32} height={32} />
         <div className="space"></div>
         <nav className={style['nav']}>
-          <NavItem href="/" text="言之有物" isActive={active === ''} />
-          <NavItem
-            href="/snippets"
-            text="片段"
-            isActive={active === 'snippets'}
-          />
+          <NavItem href="/" text="言物" isActive={active === ''} />
+          <NavItem href="/snippets" text="片段" isActive={active === 'snippets'} />
           <NavItem href="/maps" text="目录" isActive={active === 'maps'} />
         </nav>
 

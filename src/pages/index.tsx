@@ -10,7 +10,7 @@ export default function Index() {
     <GeistProvider>
       <div className={style.index}>
         <Head>
-          <title>言之有物</title>
+          <title>言物</title>
         </Head>
         <div className={style.header}>
           <Navbar />
