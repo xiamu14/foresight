@@ -1,5 +1,5 @@
 .box {
-  max-width: 790px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -7,16 +7,21 @@
   margin-bottom: 50px;
 
   text-align: center;
+}
 
-  .title {
-    margin-bottom: 20px;
+.title {
+  margin-bottom: 20px;
 
-    cursor: pointer;
-  }
-
-  .description {
-    color: #8c8c8c;
-  }
+  cursor: pointer;
+}
+.desc-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.description {
+  color: #8c8c8c;
 }
 
 .container {
@@ -26,22 +31,19 @@
   gap: 40px;
 }
 
+.cover {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  border-radius: 0px;
+}
 .content {
   grid-column: span 4 / auto;
 
-  .cover {
-    position: relative;
-
-    overflow: hidden;
-
-    width: 100%;
-
-    border-radius: 20px;
-  }
-
   .info {
-    margin: 20px 0;
-
     color: #9d9d9d;
 
     font-size: 14px;

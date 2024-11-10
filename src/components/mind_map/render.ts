@@ -4,7 +4,7 @@ import { Layer } from 'konva/lib/Layer';
 export const NODE_SPACE = 20;
 export const NODE_SPACE_X = 50;
 
-const color = '#363636';
+const textColor = '#595959';
 
 let layer: Layer | null = null;
 // 初始化舞台
@@ -20,13 +20,7 @@ export const init = (drawBox: string | HTMLDivElement) => {
 };
 
 // 绘制节点
-export const drawNode = (
-  x: number,
-  y: number,
-  name: string,
-  w: number,
-  h: number
-) => {
+export const drawNode = (x: number, y: number, name: string, w: number, h: number) => {
   let width = w || 30;
   let height = h || 20;
   let rect = new Konva.Rect({
@@ -36,7 +30,7 @@ export const drawNode = (
     height: height + 10,
     cornerRadius: 10,
     fill: '#fff',
-    stroke: '#5a4cfb',
+    stroke: '#2f54eb',
     strokeWidth: 1,
   });
   layer?.add(rect);
@@ -49,7 +43,7 @@ export const drawNode = (
     lineHeight: 1.5,
     width: width + 10,
     padding: 5,
-    fill: color,
+    fill: textColor,
     align: 'center',
   });
   text.on('click', () => {
@@ -68,10 +62,7 @@ export const drawNode = (
   layer?.draw();
 };
 // 绘制连接线
-export const drawLine = (
-  a: { x: number; y: number },
-  b: { x: number; y: number }
-) => {
+export const drawLine = (a: { x: number; y: number }, b: { x: number; y: number }) => {
   let line = new Konva.Line({
     points: [a.x, a.y, b.x, b.y],
     stroke: 'black',
@@ -99,7 +90,7 @@ export const drawMindLine = (
       b.y,
     ],
     bezier: true,
-    stroke: '#5a4cfb',
+    stroke: '#bfbfbf',
     strokeWidth: 1,
     lineCap: 'round',
     lineJoin: 'round',

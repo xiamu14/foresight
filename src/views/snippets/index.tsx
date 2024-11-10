@@ -10,10 +10,7 @@ function $Snippets() {
   return (
     <div>
       <ContentSpace>
-        <ViewHeader
-          title="只言片语"
-          desc="这里记录的灵光一闪，正渐渐汇聚成思想之海。"
-        ></ViewHeader>
+        <ViewHeader title="只言片语" desc="灵光一闪渐渐汇聚成思想之海。"></ViewHeader>
         <Divider />
         <div className={style['list-container']}>
           {allSnippets.map((item, index) => {

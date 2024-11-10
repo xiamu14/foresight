@@ -9,10 +9,7 @@ function $Maps() {
   return (
     <div>
       <ContentSpace>
-        <ViewHeader
-          title="目录"
-          desc="每一颗种子最终都会长成参天大树。"
-        ></ViewHeader>
+        <ViewHeader title="目录" desc="每一颗种子都会长成参天大树。"></ViewHeader>
         <Divider />
         <div className={style['list-container']}>
           {maps.map((item, index) => {

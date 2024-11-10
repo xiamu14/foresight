@@ -6,12 +6,12 @@
   font-size: 18px;
   line-height: 1.5;
 
-  >pre,
-  >image,
-  >ul,
-  >ol,
-  >p,
-  >div {
+  > pre,
+  > image,
+  > ul,
+  > ol,
+  > p,
+  > div {
     margin-bottom: 15px;
   }
 
@@ -20,7 +20,7 @@
     margin-bottom: 15px;
   }
 
-  li>p {
+  li > p {
     margin-bottom: 10px;
 
     font-size: 16px;
@@ -59,7 +59,7 @@
 
     padding: 8px 10px;
 
-    border-radius: 8px;
+    border-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     background-color: #f2f6fa;
@@ -72,7 +72,7 @@
       top: 0;
       left: 0;
 
-      width: 4px;
+      width: 3px;
       height: 100%;
 
       content: '';
@@ -82,6 +82,7 @@
 
     p {
       font-size: 16px;
+      margin-bottom: 10px;
 
       br {
         display: block;
@@ -95,8 +96,8 @@
     }
   }
 
-  p>code,
-  li>code {
+  p > code,
+  li > code {
     padding: 1.5px 4px;
 
     color: #326bdf;
@@ -108,8 +109,8 @@
     color: #3d79da;
   }
 
-  p>a,
-  li>a {
+  p > a,
+  li > a {
     color: #3d79da;
   }
 

@@ -17,12 +17,8 @@ export default function Article() {
   const [data, setData] = useState<Snippet | Post>();
   const [mindDrawerVisible, setMindDrawerVisible] = useState(false);
   useEffect(() => {
-    const dataset = location.pathname?.includes('post')
-      ? allPosts
-      : allSnippets;
-    const article = (dataset as any).find((item: any) =>
-      location.pathname?.includes(item.slug)
-    );
+    const dataset = location.pathname?.includes('post') ? allPosts : allSnippets;
+    const article = (dataset as any).find((item: any) => location.pathname?.includes(item.slug));
     setData(article);
   }, [location.pathname]);
 
@@ -38,24 +34,26 @@ export default function Article() {
     <ContentSpace>
       <div className={style['box']}>
         <header className={style.header}>
-          <h1 className={style['title']} onClick={handleCloseMindDrawer}>
-            {data.title}
-          </h1>
-          <p className={style['description']}>{data.description}</p>
+          <div className={style.cover}>
+            <AspectDiv width="100%" height="48%">
+              <MyImage src={data.cover}></MyImage>
+            </AspectDiv>
+          </div>
         </header>
         <div className={style['container']}>
           <div className={style.content}>
-            <div className={style.cover}>
-              <AspectDiv width="100%" height="48%">
-                <MyImage src={data.cover}></MyImage>
-              </AspectDiv>
+            <h1 className={style['title']} onClick={handleCloseMindDrawer}>
+              {data.title}
+            </h1>
+            <div className={style['desc-box']}>
+              {/* <p className={style['description']}>{data.description}</p> */}
+              <div className={style.info}>
+                <p>
+                  {format(parseISO(data.date), 'MMMM dd, yyyy')} / {data.readingTime.text}
+                </p>
+              </div>
             </div>
-            <div className={style.info}>
-              <p>
-                {format(parseISO(data.date), 'MMMM dd, yyyy')} /{' '}
-                {data.readingTime.text}
-              </p>
-            </div>
+
             <Divider />
             <div className="article">
               <Component components={mdxComponent as any} />
@@ -71,7 +69,7 @@ export default function Article() {
         visible={mindDrawerVisible}
         onClose={handleCloseMindDrawer}
         placement="right"
-        style={{ width: 600 }}
+        style={{ width: 600, borderRadius: '10px' }}
       >
         <Drawer.Title>思维导图</Drawer.Title>
         <Drawer.Content>
