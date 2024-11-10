@@ -9,7 +9,7 @@ export default withContentlayer({
   },
   images: {
     disableStaticImages: false,
-    domains: ['images.ctfassets.net'],
+    domains: ['images.ctfassets.net', 'images.unsplash.com'],
   },
   async rewrites() {
     return [

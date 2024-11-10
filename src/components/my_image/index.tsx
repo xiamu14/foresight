@@ -1,16 +1,22 @@
 import NextImage from 'next/image';
-import React, { useCallback } from 'react';
+import { useEffect, useState, memo } from 'react';
 
 function $MyImage(props: { src: string; alt?: string }) {
   const { src, alt } = props;
-  const getSrc = useCallback((src: string) => {
-    return /\/images\/paper\//.test(src) ? src : `/images/paper/${src}`;
+
+  const [picture, setPicture] = useState('');
+  useEffect(() => {
+    const endpoint =
+      'https://api.unsplash.com/photos/random/?client_id=G9TqWHSpfznQX8Dcb25WU5UOUSuFJcN942Fha3YJfEc';
+    fetch(endpoint).then(async (response) => {
+      const data = await response.json();
+      setPicture(data.urls.regular);
+    });
   }, []);
 
-  const fullSrc = getSrc(src);
-  return <NextImage src={fullSrc} alt={alt ?? ''} fill />;
+  return <NextImage src={picture} alt={alt ?? ''} fill />;
 }
 
-const MyImage = React.memo($MyImage);
+const MyImage = memo($MyImage);
 
 export default MyImage;
